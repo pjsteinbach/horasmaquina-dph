@@ -11,10 +11,15 @@
 
 /*font-family: "Lexend", sans-serif;Poppins*/
 
-body {
+*{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
     font-family: "Poppins", sans-serif;
-    background: var(--black-color);
     height: 100vh;
 }
 
@@ -23,7 +28,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--dark-gray-opacity);
+    background: var(--black-color);
     color: var(--white-color);
     height: 80px;
 }
@@ -38,48 +43,46 @@ header {
     height: 100%;
     margin: 8px;
 }
-
 .title {
     flex: 1;
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    letter-spacing: 1px;
 }
+
+/*main*/
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 24px;
     padding: 30px;
-    min-height: 80vh;
-    max-height: calc(100vh - 80px - 60px);
     background: var(--white-color);
 }
 .container section{
     position: relative;
     background: var(--light-gray-color);
+    padding: 20px;
+    border-radius: 4px;
     overflow: hidden;
 }
 .container section h2{
     position: absolute;
-    width: calc(100% - 16px);
+    width: 100%;
     background-color: var(--dark-gray-color);
     color: var(--white-color);
     font-family: "Lexend", sans-serif;
     font-size: .8rem;
     font-weight: 600;
     padding: 8px 16px;
-    top: -11px;
-    left:0px;
+    top: 0;
+    left: 0;
 }
 
 /*Seccion filtro*/
 .filtro {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    border-radius: 4px;
-    padding: 20px;
 }
 .filter-form {
     display: flex;
@@ -130,14 +133,10 @@ button{
     font-family: 'Lexend', sans-serif;
 }
 
-/*Secciín proyectos*/
+/*Sección proyectos*/
 .proyectos{
     grid-column: 1 / 2;
     grid-row: 2 / 4;
-    background: var(--medium-gray-color);
-    border-radius: 4px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(44,62,80,0.05);
 }
 .proyectos__list{
     height: calc(100% - 36px);
@@ -156,14 +155,14 @@ button{
     background-color: var(--white-color);
     color: var(--black-color);
 }
+
+
 /*Seccion img-sat*/
 .imagen-satelital {
     position: relative;
     grid-column: 2 / 4;
     grid-row: 1 / 4;
     background: var(--medium-gray-color);
-    border-radius: 4px;
-    padding: 20px;
     box-shadow: 0 2px 8px rgba(44,62,80,0.05);
     display: flex;
     align-items: center;
@@ -255,7 +254,7 @@ button{
 .detalle {
     position: absolute;
     top: 0;
-    right: calc(-1 * 100vw / 3);
+    right: calc(-480px - 24px - 24px);
     width: 480px;
     height: 100%;
     display: flex;
@@ -291,9 +290,54 @@ button{
     color: var(--black-color);
     border: none;
 }
-#descargar-pdf {
+#ficha {
     display: none;
     align-self: end;
     width: 200px;
     cursor: pointer;
+}
+footer {
+    display: none;
+    text-align: center;
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+footer img{
+    width: 94%;
+}
+
+@media (max-width: 768px) {
+    body{
+        background-color: red;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .logo, .title{
+        scale: 0.8;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .filtro{
+        min-height: 160px;
+        height: 100%;
+    }
+    .proyectos{
+        min-height: 320px;
+        height: 100%;
+    }
+    .imagen-satelital {
+        min-height: 640px;
+        height: 100%;
+    }
+    .dependencias{
+        display: none;
+    }
+    footer {
+        display: block;
+        width: 100%;
+        padding: 12px;
+    }
 }
