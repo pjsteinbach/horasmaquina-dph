@@ -308,7 +308,7 @@ footer img{
 
 @media (max-width: 768px) {
     body{
-        background-color: red;
+        background-color: var(--white-color);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -350,3 +350,4 @@ footer img{
         padding: 12px;
     }
 }
+
