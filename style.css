@@ -57,6 +57,7 @@ header {
     grid-template-rows: 1fr 1fr 1fr;
     gap: 24px;
     padding: 30px;
+    height: calc(100vh - 80px);
     background: var(--white-color);
 }
 .container section{
@@ -253,9 +254,8 @@ button{
 }
 .detalle {
     position: absolute;
-    top: 0;
-    right: calc(-480px - 24px - 24px);
-    width: 480px;
+    transform: translateX(150%);
+    width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -263,10 +263,10 @@ button{
     padding: 48px 24px 12px 24px;
     background-color: var(--light-gray-color);
     border-radius: 4px;
-    transition: right 0.8s ease-in-out;
+    transition: transform 0.8s ease-in-out;
 }
 .detalle--visible{ 
-    right: 0;
+    transform: translateX(50%);
 }
 .detalle div{
     display: flex;
@@ -279,7 +279,7 @@ button{
     color: var(--white-color);
     background-color: var(--dark-gray-color);
     padding: 4px 8px;
-    width: 244px;
+    width: 70%;
 }
 .detalle div input{
     width: 100%;
@@ -319,18 +319,27 @@ footer img{
     .container {
         display: flex;
         flex-direction: column;
+        height: 200vh;;
     }
     .filtro{
-        min-height: 160px;
+        min-height: 25vh;
         height: 100%;
     }
     .proyectos{
-        min-height: 320px;
+        min-height: 50vh;
         height: 100%;
     }
     .imagen-satelital {
-        min-height: 640px;
+        min-height: 75vh;
         height: 100%;
+    }
+    .detalle {
+        width: 100%;
+        transform: translateX(100%);
+        gap: 4px;
+    }
+    .detalle--visible{ 
+        transform: translateX(0%);
     }
     .dependencias{
         display: none;
